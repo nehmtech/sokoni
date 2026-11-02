@@ -62,6 +62,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "config.urls"
+AUTH_USER_MODEL = "core.User"
 
 TEMPLATES = [
     {
@@ -157,4 +158,3 @@ CORS_ALLOW_METHODS = (
     "PUT",
 )
 
-print(SECRET_KEY)
