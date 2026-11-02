@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Sokoni</title>
+</head>
+<body>
+    
+<h3>Browse our products</h3>
+
+<div class="container">
+{% for product in products %}
+
+ <div class="card">
+    <img src="{{ product.image.url }}" alt = "{{product.title}}">
+    <p> {{ product.title}} </p>
+    <p> {{ product.price}} </p>
+    <p> {{ product.stock}} </p>
+    <button><a href="{% url 'product_detail' product.slug %}">View Details</a></button>
+</div>
+
+    {% empty %}
+    <p>There are no products at the moment</p>
+
+{% endfor %}
+</div>
+    
+</body>
+</html>

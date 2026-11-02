@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Sokoni</title>
+</head>
+<body>
+    
+<h3>More details about {{ product.title}} </h3>
+
+
+    <img src="{{ product.image.url }}" alt = "{{product.title}}">
+    <p> {{ product.title}} </p>
+    <p> {{ product.description}} </p>
+    <p> {{ product.price}} </p>
+    <p> {{ product.stock}} </p>
+    
+
+</div>
+    
+</body>
+</html>

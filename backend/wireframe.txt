@@ -1,0 +1,32 @@
+# Sokoni Ecommerce Marketplace
+
+troll for products                   browse products
+selecting items in the shelf         
+add items to cart                    cart - authentication
+                                     wishlist - authentication
+go to teller                         personal details
+                                     Order - order items
+give the total amount                Order summary
+mode of payment                      Payment details  
+loyalty point                        Payment - receipt
+payment - receipt                    loyalty  
+
+
+
+User - username, password, first name, last name, user types
+Vendor - User, registration details
+Product - vendor, name, categories, price, stock, description
+Cart - User, Cart Items, quantity, cart total
+Wishlist - User, Wishlist Items, quantity, cart total
+Delivery - Location, fee
+Discount - discount type (points, season, product quantity, total spent)
+Delivery Option - pickup, home delivery (delivery),  location address, pickup station, contacts
+Order - User, status, order items, quantity, order total price, discount 
+Payment - User, status, payment method, loyalty points
+Reviews - User, review type (product, delivery process)
+Refund - product, reason
+Support - contact form
+Notification - product, delivery, marketing, wishlist
+
+
+app - model - admin - views - url 
