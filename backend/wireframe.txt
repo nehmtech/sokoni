@@ -23,7 +23,7 @@ Discount - discount type (points, season, product quantity, total spent)
 Delivery Option - pickup, home delivery (delivery),  location address, pickup station, contacts
 Order - User, status, order items, quantity, order total price, discount 
 Payment - User, status, payment method, loyalty points
-Reviews - User, review type (product, delivery process)
+Reviews - User, review type (product, delivery process) (Order picture)
 Refund - product, reason
 Support - contact form
 Notification - product, delivery, marketing, wishlist
