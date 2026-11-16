@@ -1,14 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom"
 
-function ProductCard({name="HP Laptop", price = 20000,stock = 50}) {
+function ProductCard({ product }) {
     return (
-    <> 
-        <h2>Product page</h2>
-        <h4>Product name: {name}</h4> 
-        <h4>Product price: {price}</h4> 
-        <h4>Product stock: {stock}</h4> 
+    <Link to={`products/${product.slug}`}
+    className="block rounded-lg shadow p-2"
+    
+    > 
+        <h4>{product.title}</h4> 
+        <h4>{product.price}</h4> 
+        <h4>{product.stock}</h4> 
        
-    </>
+    </Link>
     );
 }
 
