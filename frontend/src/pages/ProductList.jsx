@@ -29,15 +29,15 @@ useEffect(() => {
 
   
   return (
-    <> 
-    <h3>Products</h3>
-    <div>
+    <div className="ms-10 me-10"> 
+    <h3 className="mb-4">Products</h3>
+    <div className="flex gap-2 justify-start justify-between   ">
         {products.map((product) => (
             <ProductCard key={product.id} product={product}/>
         ))}
     </div>
  
-    </>
+    </div>
   )
 }
 

@@ -12,7 +12,7 @@ function ProductDetail() {
 useEffect(() => {
     async function loadProduct() {
         try{
-            const data = await getProduct()
+            const data = await getProduct(slug)
             setProduct(data);
         } catch (err) {
             setError(err.message)
@@ -32,6 +32,17 @@ useEffect(() => {
   return (
     <> 
     <div>
+        {product.image ? (
+        <img 
+        src={product.image}
+        alt={product.title}
+        className="h-30 object-cover"
+        />
+    ) : (
+        <div className="h-30 bg-gray-200 flex items-center justify-center text-gray-500">
+            No image
+        </div>
+    )}
         <h4>{product.title}</h4> 
         <h4>{product.description}</h4> 
         <h4>{product.price}</h4> 
