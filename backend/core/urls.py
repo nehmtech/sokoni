@@ -1,4 +1,5 @@
 from django.urls import path
+from rest_framework.authtoken.views import obtain_auth_token  # CHANGE 3
 
 from .views import (
     RegisterView, MeView, CategoryList, VendorList, ProductList, ProductDetail,
@@ -9,6 +10,7 @@ from .views import (
 urlpatterns = [
     # users
     path("auth/register/", RegisterView.as_view()),
+    path("auth/login/", obtain_auth_token),   # CHANGE 3: POST username+password -> {"token": "..."}
     path("auth/me/", MeView.as_view()),
 
     # shop

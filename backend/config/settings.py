@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    "rest_framework.authtoken",   # CHANGE 1: stores one login token per user
     "corsheaders",
     
     "core",
@@ -140,6 +141,19 @@ MAILERS = {
     "default": {
         "BACKEND": "django.core.mail.backends.console.EmailBackend",
     },
+}
+
+
+# CHANGE 2: Django REST Framework settings (authentication + pagination)
+REST_FRAMEWORK = {
+    # Who is making the request? Checked in this order.
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.TokenAuthentication",    # header: Authorization: Token <key>
+        "rest_framework.authentication.SessionAuthentication",  # keeps the admin / browsable API working
+    ],
+    # Every list endpoint is split into pages of this size
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE": 6,
 }
 
 

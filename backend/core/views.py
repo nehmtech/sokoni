@@ -175,6 +175,7 @@ class CartItemDelete(generics.DestroyAPIView):
 class OrderList(generics.ListAPIView):
     serializer_class = OrderSerializer
     permission_classes = [IsAuthenticated]
+    pagination_class = None  # CHANGE 4: the frontend shows all orders on one page
 
     def get_queryset(self):
         return orders_with_items().filter(customer=self.request.user).order_by("-id")
@@ -272,6 +273,7 @@ class ReviewList(generics.ListCreateAPIView):
     """GET /reviews/?product=1   |   POST to add a review"""
     serializer_class = ReviewSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
+    pagination_class = None  # CHANGE 4: the frontend shows all reviews of a product
 
     def get_queryset(self):
         queryset = Review.objects.select_related("user").order_by("-id")
